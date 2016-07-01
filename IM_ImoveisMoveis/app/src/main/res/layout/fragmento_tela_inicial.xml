@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundoinicial">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/casa"
+            android:layout_above="@+id/textView6"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="15dp" />
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/placa"
+            android:layout_marginTop="196dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="239dp"
+            android:layout_height="47dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="I.M. Imóveis Móveis:"
+            android:id="@+id/textView5"
+            android:textColor="@android:color/background_dark"
+            android:textStyle="normal|bold"
+            android:textSize="@dimen/abc_dialog_padding_material"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="175dp"
+            android:layout_alignTop="@+id/imageView2"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp" />
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Versão 1.0"
+            android:id="@+id/textView6"
+            android:textColor="@android:color/holo_red_dark"
+            android:textStyle="bold|italic"
+            android:layout_below="@+id/textView5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="197dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="150dp" />
+    </GridLayout>
+
+</RelativeLayout>
