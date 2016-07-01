@@ -4,6 +4,9 @@
     android:layout_height="match_parent"
     android:choiceMode="singleChoice"
     android:id="@+id/listaApartamentos"
-    android:background="@drawable/fundolista3">
+    android:background="@drawable/fundolista3"
+    android:clickable="true"
+    android:contextClickable="true"
+    android:longClickable="true">
 
 </ListView>

@@ -1,5 +1,7 @@
 package br.edu.ifba.mobile.IM_ImoveisMoveis.fragmentos;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,11 +19,12 @@ import br.edu.ifba.mobile.IM_ImoveisMoveis.tarefas.ListagemApartamentos;
 import br.edu.ifba.mobile.IM_ImoveisMoveis.tarefas.RemocaoApartamento;
 
 /**
- * Created by LEANDRO on 20/05/2016.
+ * Created by LEANDRO on 20/06/2016.
  */
 public class FragmentoListaApartamentos extends Fragment {
 
     private static FragmentoListaApartamentos instancia = null;
+
     public static FragmentoListaApartamentos getInstancia(){
         if (instancia == null){
             instancia = new FragmentoListaApartamentos();
@@ -33,12 +36,9 @@ public class FragmentoListaApartamentos extends Fragment {
     private ListView lista = null;
 
     @Override
-    public View onCreateView(LayoutInflater inflador,
-                             ViewGroup vgrupo, Bundle bundle){
+    public View onCreateView(LayoutInflater inflador, ViewGroup vgrupo, Bundle bundle){
         tela = inflador.inflate(R.layout.fragmento_listagem_apartamento, vgrupo, false);
-
         preparar();
-
         return tela;
     }
 
@@ -49,6 +49,7 @@ public class FragmentoListaApartamentos extends Fragment {
         inflador.inflate(R.menu.menu_imoveis, menu);
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         long id = item.getItemId();
@@ -68,15 +69,13 @@ public class FragmentoListaApartamentos extends Fragment {
     private void preparar(){
         lista = (ListView) tela.findViewById(R.id.listaApartamentos);
 
-        //Adiciona a opção  de menu ao fragmento
         this.setHasOptionsMenu(true);
-        //lista clicavel
         lista.setClickable(true);
-        //Apenas uma escolha por vez
         lista.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     public void atualizar(){
         ListagemApartamentos listagem = new ListagemApartamentos(this.getContext(), lista);
         listagem.execute();

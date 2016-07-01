@@ -161,9 +161,8 @@ public class Apartamento {
 
 	@Override
 	public String toString() {
-		return bairro + " - R$" + new DecimalFormat("0.00").format(valor) + " + TX = R$" + new DecimalFormat("0.00").format(txCond) + " - " + quarto + " - " + banheiros ;
-
+		return "Apto(" + bairro + " - R$" + valor + " + R$" + txCond + " - " + quarto +
+				", "+ banheiros + ", " + areaLazer + ")";
 	}
-
 }
 

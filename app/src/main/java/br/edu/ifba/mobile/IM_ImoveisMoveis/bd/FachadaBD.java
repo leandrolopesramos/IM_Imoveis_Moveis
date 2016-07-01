@@ -113,8 +113,7 @@ public class FachadaBD extends SQLiteOpenHelper {
 		List<Casa> casas = new ArrayList<Casa>();
 		SQLiteDatabase db = this.getReadableDatabase();
 
-		String selecao = "SELECT END, BAIRRO , COMPLEMENTO , VALOR , QUARTO , BANHEIRO, " +
-				"SALA , COZINHA , GARAGEM , IPTU , AGUA , LUZ , OBS FROM CASA";
+		String selecao = "SELECT CODIGO, END, BAIRRO , COMPLEMENTO , VALOR , QUARTO , BANHEIRO, SALA , COZINHA , GARAGEM , IPTU , AGUA , LUZ , OBS FROM CASA";
 
 		Cursor cursor = db.rawQuery(selecao, null);
 
@@ -123,6 +122,7 @@ public class FachadaBD extends SQLiteOpenHelper {
 			while (temProximo){
 				Casa casa = new Casa();
 
+				casa.setCodigo(cursor.getLong(cursor.getColumnIndex("CODIGO")));
 				casa.setEndereco(cursor.getString(cursor.getColumnIndex("END")));
 				casa.setBairro(cursor.getString(cursor.getColumnIndex("BAIRRO")));
 				casa.setComplemento(cursor.getString(cursor.getColumnIndex("COMPLEMENTO")));
@@ -211,7 +211,7 @@ public class FachadaBD extends SQLiteOpenHelper {
 		List<Apartamento> apartamentos = new ArrayList<Apartamento>();
 		SQLiteDatabase db = this.getReadableDatabase();
 
-		String selecao = "SELECT END, BAIRRO , COMPLEMENTO , VALOR , TXCOND , AREALAZER , AREASERVICO , QUARTO , BANHEIRO," +
+		String selecao = "SELECT CODIGO, END, BAIRRO , COMPLEMENTO , VALOR , TXCOND , AREALAZER , AREASERVICO , QUARTO , BANHEIRO," +
 				" SALA , COZINHA , ESTACIONAMENTO , IPTU , AGUA , LUZ , OBS FROM APARTAMENTO";
 
 		Cursor cursor = db.rawQuery(selecao, null);
@@ -221,6 +221,7 @@ public class FachadaBD extends SQLiteOpenHelper {
 			while (temProximo){
 				Apartamento apartamento = new Apartamento();
 
+				apartamento.setCodigo(cursor.getLong(cursor.getColumnIndex("CODIGO")));
 				apartamento.setEndereco(cursor.getString(cursor.getColumnIndex("END")));
 				apartamento.setBairro(cursor.getString(cursor.getColumnIndex("BAIRRO")));
 				apartamento.setComplemento(cursor.getString(cursor.getColumnIndex("COMPLEMENTO")));

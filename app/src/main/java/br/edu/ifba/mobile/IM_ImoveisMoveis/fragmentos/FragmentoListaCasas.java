@@ -1,5 +1,7 @@
 package br.edu.ifba.mobile.IM_ImoveisMoveis.fragmentos;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -32,6 +34,8 @@ public class FragmentoListaCasas extends Fragment {
     private View tela = null;
     private ListView lista = null;
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflador,
                              ViewGroup vgrupo, Bundle bundle){
@@ -42,6 +46,7 @@ public class FragmentoListaCasas extends Fragment {
         return tela;
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflador /*pega layout em xml e cria grafico de fato criar o menu*/ ){
         super.onCreateOptionsMenu(menu, inflador);
@@ -62,6 +67,7 @@ public class FragmentoListaCasas extends Fragment {
 
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     public void atualizar(){
         ListagemCasas listagem = new ListagemCasas(this.getContext(), lista);
         listagem.execute();

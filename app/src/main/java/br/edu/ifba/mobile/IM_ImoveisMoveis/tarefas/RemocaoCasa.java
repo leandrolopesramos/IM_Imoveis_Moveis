@@ -26,7 +26,7 @@ public class RemocaoCasa extends AsyncTask<Void, Void, String>{
 
         if (casa.getCodigo() != -1){
            if (FachadaBD.getInstancia().removerCasa(casa)==0){
-               mensagem = "Problema em remover o Apto!";
+               mensagem = "Problema em remover a Casa!";
            }else {
                mensagem = "Casa Removida Ser Humaninho!";
            }

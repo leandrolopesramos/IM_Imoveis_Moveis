@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
  * Created by LEANDRO on 28/06/2016.
  */
 public class Casa {
-    private long codigo= -1;
+    private long codigo = -1;
     private String endereco;
     private String bairro;
     private String complemento;
@@ -135,8 +135,6 @@ public class Casa {
 
     @Override
     public String toString() {
-        return bairro + " - R$" + new DecimalFormat("0.00").format(valor) + " - " + quarto + "" + banheiro;
-
+        return "Casa (" + bairro + " - R$" + valor + " - " + quarto + ", " + banheiro + ", " + garagem + ")";
     }
-
 }
